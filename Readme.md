@@ -20,7 +20,7 @@ UPSTREAM_SERVER = "http://origin-domain:port"
 filter header 'Content-Type: application/json'
 filter post body method in ('requestAirdrop', 'sendTransaction', 'simulateTransaction')
 ```
-proxy --hostname 0.0.0.0 --threadless --plugins proxy.plugin.ModifyPostDataPlugin --plugins RedirectToCustomServerPlugin
+proxy --hostname 0.0.0.0 --threadless --plugins proxy.plugin.ModifyPostDataPlugin --plugins proxy.plugin.RedirectToCustomServerPlugin
 ````
 
 ## test client
