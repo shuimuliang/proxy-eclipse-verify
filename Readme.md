@@ -46,3 +46,6 @@ https://github.com/abhinavsingh/proxy.py/blob/develop/proxy/plugin/modify_post_d
 
 # forward proxy方式
 python3 server.py
+
+# forward proxy方式
+python3 server2.py --hostname 16.162.55.186 --port 8899 
