@@ -14,6 +14,7 @@
        httpbin
 """
 from typing import Optional
+from urllib import parse as urlparse
 
 from ..http.proxy import HttpProxyBasePlugin
 from ..http.parser import HttpParser
@@ -45,11 +46,15 @@ class ModifyPostDataPlugin(HttpProxyBasePlugin):
     def before_upstream_connection(
             self, request: HttpParser,
     ) -> Optional[HttpParser]:
+        # Redirect all non-https requests to inbuilt WebServer.
         return request
 
     def handle_client_request(
             self, request: HttpParser,
     ) -> Optional[HttpParser]:
+        if b'content-type' not in request.headers:
+            return request
+
         content_type = request.headers.get(b'content-type')
         if content_type[1] == b'application/json':
             #print("hit content_type")
