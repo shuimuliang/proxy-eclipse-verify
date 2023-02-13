@@ -1,3 +1,4 @@
+# curl -x proxy方式
 ## 1. 安装proxy.py依赖包, install python package, global
 ```shell
 pip3 install -r requirements.txt
@@ -42,3 +43,6 @@ curl http://localhost:8899 -X POST -H "Content-Type: application/json" -d '
 ## plugin reference
 https://github.com/abhinavsingh/proxy.py/tree/develop/proxy/plugin
 https://github.com/abhinavsingh/proxy.py/blob/develop/proxy/plugin/modify_post_data.py
+
+# forward proxy方式
+python3 server.py
